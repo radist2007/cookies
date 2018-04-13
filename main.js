@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('Hello from main.js');
+  console.log('Hello from main2.js');
   
   var inputCookieName = document.getElementById('inputCookieName').value;
   var inputCookieValue = document.getElementById('inputCookieValue').value;
@@ -9,12 +9,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function configCookie(){
     console.log(inputCookieName);
+    console.log(typeof( inputCookieName));
     console.log(inputCookieValue);
+    console.log(typeof( inputCookieValue));
     inputCookieName = document.getElementById('inputCookieName').value;
     inputCookieValue = document.getElementById('inputCookieValue').value;
-    var cookie = inputCookieName + ' ' + inputCookieValue;
+    var cookie = inputCookieName + '=' + inputCookieValue + ';max-age=31536000' + '; path=/;';
+    console.log(inputCookieName);
+    console.log(typeof( inputCookieName));
+    console.log(inputCookieValue);
+    console.log(typeof( inputCookieValue));
     return cookie;
   }
+
+  console.warn('start');
+  configCookie();
+  console.log('end');
 
   function setCookie(){
     var cookie = "";
